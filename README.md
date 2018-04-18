@@ -38,6 +38,15 @@ Prioritized features include the following:
 -   Delete articles from database
 -   Page to display full list of saved articles
 
+## Tech Requirements
+
+-   HTML / EJS: Your HTML should be semantic and valid. Your app uses EJS to render information on the page.
+-   Node and Express: Your app will need to have its own server, built using Express.
+-   MVC Pattern: Your app uses Models, Views, Controllers pattern we have gone over in class.
+-   SQL / PG-PROMISE: Your app will need to persist data. Your app should have at least two related models.
+-   Third-party API call from the back-end using any NPM package of your choosing.
+-   CSS & Design: Your app should be pleasing to look at. Your design should take usability into account.
+
 
 ### MVP/PostMVP
 
@@ -78,101 +87,74 @@ When the user has been authorized to enter the site, the home page will display:
 
 -   Vice API displays news feed
 -   User can:
+        - Save article to database
         - Create custom articles
-        - Create custom articles
-        - Edit saved articles
--   The keyboard will animate to corresponding key events
+        - Edit saved articles from database
+        - Delete articles from database
+-   Button to view database
+-   Button to add custom article to database
+-   Log out button with bring the user back to the login page
 
-### Playing The Game
+### Database
 
-When the user lands on the site, a prompt will request a user name to be used later for displaying personalized score as well as level. The level will be reflected by the speed of the marquee. The modal will be removed and filling required information and will direct to the home page of game. The title and directions are displayed at the top of the screen for clear instructions. When the user presses play, the timer and marquee will begin. The user will then repeat the scrolling texts to receive an accuracy and completion score when the timer has finished. A custom alert will display user name and the score: accuracy of total typed keys. The user will then be able to restart the same if desired.
+The database can be accessed from the button on the home page. The database will display each article preview with a link to view the full article in a separate page.
 
-### Winning The Game
-
-After the timer is finished, score will be displayed:
-
--   Correctly typed letters compared to game's expected set
--   Restart game continuously displayed at the bottom of screen
-
-### Game Reset
-
-When the restart game button is clicked, the window will reload for a fresh game and user:
-
--   Score to be reset to 0
--   User personal information and previous key events will no longer be stored
--   Timer will be reset
 
 ## Functional Components
 
-Based on the initial logic defined in the previous game phases section, logic is further broken down into functional components. The following code is encapsulated for the purpose of reusability.
+The following code is encapsulated for the purpose of reusability.
 
 
-| Function | Description                                                           |
-| -------- | --------------------------------------------------------------------- |
-| Timer    | Sets a timer that be called anywhere in the application               |
-| Marquee  | Runs The Marquee plugin where specified or automatically on page load |
-| Greeting | Grabs the local storage of the initial landing page                   |
-| Compare  | Compares the user input to the expected input for game functionality  |
-| Reload   | Reloads the page for a hard restart where triggered                   |
-
-
-## Helper Functions
-
-Helper functions are generic enough that they can be reused in other applications. This section documents all helper functions that fall into this category.
-
-
-| Function       | Description                                   |
-| -------------- | --------------------------------------------- |
-| Timer Function | Sets a timer that can easily be customized    |
-| Restart        | Restarts the page using the window's location |
-| Alert Box      | Custom alert box to replace default alert css |
-| Sound          | Stops the sound played by embedded video      |
+| Function     | Description                                                          |
+| ------------ | -------------------------------------------------------------------- |
+| Article View | Article view is rendered by clicking button on multiple pages in app |
 
 
 ## Additional Libraries
 
 
-| Library        | Description                                                                 |
-| -------------- | --------------------------------------------------------------------------- |
-| Google Fonts   | Used to set font widely supported by various browsers                       |
-| Jquery         | Used to enable easy DOM traversing, manipulating, event handling, animating |
-| Jquery Marquee | Plugin to scroll text like traditional marquee with CSS3 support            |
-| Youtube        | Embeded Youtube video for background sound                                  |
+| Library        | Description                                              |
+| -------------- | -------------------------------------------------------- |
+| Google Fonts   | Used to set font widely supported by various browsers    |
 
 
 ## Code Snippet
 
-The below code snippet implemented Jquery DOM manipulation and ES6 syntax to match the user key events to id's assigned to HTML elements.
+The below code snippet is implemented of the discovery I made while trying to append API data to the DOM, server-side. Data was passed down from the controller and views, then into the ejs view by referencing the res.locals object.
 
 ```
-$(document).on('keypress', function(event) {
-    let id = event.key;
-    let selectedId = $(`#${id}`).attr('id');
-    let selectedElement = $(`#${selectedId}`);
-    if(id === selectedId){
-        selectedElement.css('background-color', 'pink');
-        setTimeout(function(){
-        selectedElement.css('background-color', 'white');
-        }, 200);
-    }
-});
+data(req, res, next) {
+    const NewsAPI = require('newsapi');
+    const newsapi = new NewsAPI('');
+
+    newsapi.v2.everything({
+        q: 'general',
+        sources: 'vice-news',
+        domains: 'https://news.vice.com',
+        from: '2018-01-01',
+        to: '2018-04-17',
+        language: 'en',
+        sortBy: 'publishedAt',
+        page: 20
+    }).then(data => {
+        res.locals.articles = data.articles
+        next();
+    }).catch(err => {
+        next(err);
+    })
+}
 ```
 
 
-## jQuery Discoveries
+## Discoveries
 
--   Jquery's Marquee Plugin (<http://cdn.jsdelivr.net/jquery.marquee/1.4.0/jquery.marquee.min.js>)
--   Tutorial to create a replicated keyboard with CSS and Jquery (<https://code.tutsplus.com/tutorials/creating-a-keyboard-with-css-and-jquery--net-5774>)
+-   Document cannot be referenced server side. The best solution to get API data to render server-side is to pass it through the controller and views, down into the ejs view of your choosing.
 
 ## Change Log
 
 
 ## Issues and Resolutions
 
-ERROR: Input could not be hidden and still track user input
+ERROR:
 
-RESOLUTION: CSS blends it in with the background
-
-ERROR: Could not access user input from greeting page throughout the rest of the application
-
-RESOLUTION: Local Storage to pass the values
+RESOLUTION:
