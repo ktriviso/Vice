@@ -2,11 +2,11 @@
 <% include ./partials/header %>
 <div class="container">
     <ul class"api">
-        <% data.forEach(book => { %>
-            <li><%= book.content %></li>
-            <li><%= book.author %></li>
+        <% data.forEach(article => { %>
+            <li><%= article.title %></li>
+            <li><%= article.author %></li>
+            <li><%= article.description %></li>
             <div class="icons">
-                <li><i class="fas fa-pencil-alt"></i></li>
                 <li><i class="fas fa-eye"></i></li>
                 <li><i class="fas fa-thumbs-up"></i></li>
             </div>

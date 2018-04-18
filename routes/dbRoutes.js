@@ -8,6 +8,6 @@ const router = express.Router();
 //     .get(controller.show, viewsController.showOne)
 
 router.route('/')
-    .get(controller.index, viewsController.showAll)
+    .get(controller.data, viewsController.showArticle)
 
 module.exports = router;

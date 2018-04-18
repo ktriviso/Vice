@@ -1,13 +1,13 @@
-const db = require('../config/dbConfig.js');
+// const db = require('../config/dbConfig.js');
 
 module.exports= {
 
-    findAll(){
-        return db.many(`
-            SELECT *
-            FROM books
-        `)
-    },
+    // findAll(){
+    //     return db.many(`
+    //         SELECT *
+    //         FROM books
+    //     `)
+    // },
 
     // findOne(id){
     //     return db.one(`
