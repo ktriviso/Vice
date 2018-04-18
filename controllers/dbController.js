@@ -12,15 +12,15 @@ module.exports = {
                 next(err);
             })
     },
-
-    show(req, res, next) {
-        db.findOne()
-            .then(data => {
-                res.locals.book = data;
-            })
-            .catch(err => {
-                next(err);
-            })
-    },
+    // 
+    // show(req, res, next) {
+    //     db.findOne()
+    //         .then(data => {
+    //             res.locals.book = data;
+    //         })
+    //         .catch(err => {
+    //             next(err);
+    //         })
+    // },
 
 };

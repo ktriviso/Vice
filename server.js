@@ -7,7 +7,6 @@ const router = require('./routes/dbRoutes.js');
 const PORT = process.env.PORT || 3000;
 const app = express();
 
-
 const NewsAPI = require('newsapi');
 const newsapi = new NewsAPI('a66af1cffec146d9a6e58897bd1917ed');
 
@@ -21,7 +20,7 @@ const data = newsapi.v2.everything({
     sortBy: 'publishedAt',
     page: 20
 }).then(res => {
-    return res
+    console.log(res)
 });
 // app.get('/', (req, res) => {
 //     res.send(data)

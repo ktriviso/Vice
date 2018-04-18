@@ -1,5 +1,43 @@
 body {
     font-size: 100%;
+    background-image: url('/black.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    font-family: 'Oswald', sans-serif;
+}
+
+header ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    padding: 1.3rem;
+}
+
+ul {
+    list-style: none;
+    padding: 1rem;
+}
+
+select {
+    border: none;
+    font-size: 1rem;
+    background-color: transparent;
+    outline: none;
+}
+
+span {
+    padding-left: 2rem;
+    color: rgba(255, 255, 255, .8);
+}
+
+/* --------------------------------
+default scroll bar
+--------------------------------- */
+::-webkit-scrollbar {
+    display: none;
 }
 
 .container {
@@ -8,10 +46,26 @@ body {
     margin: auto;
     font-size: 1.5rem;
     overflow: scroll;
-    border: 1px solid black;
     padding: 1rem;
+    background-color: rgba(255, 255, 255, .8);
 }
 
-ul {
-    list-style: none;
+.icons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    padding-bottom: 1rem;
+}
+
+.icons li {
+    padding-left: 1rem;
+    font-size: 1rem;
+}
+
+.title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
