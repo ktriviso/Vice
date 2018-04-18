@@ -1,0 +1,11 @@
+<% include ./partials/boilerplate %>
+<% include ./partials/header %>
+<div class="container">
+    <ul>
+        <% data.forEach(book => { %>
+            <li><%= book.content %></li>
+            <li><%= book.author %></li>
+        <% })%>
+    </ul>
+</div>
+<% include ./partials/end %>
