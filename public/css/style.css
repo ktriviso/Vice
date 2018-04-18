@@ -37,7 +37,7 @@ select {
 
 span {
     padding: 5rem;
-    color: black;
+    color: 	#B0C4DE;
     position: absolute;
     bottom: 0;
     right: 0;
@@ -54,12 +54,11 @@ default scroll bar
     width: 45%;
     height: 50vh;
     margin: 0;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     overflow: scroll;
     padding: 1rem;
     position: absolute;
     right: 0;
-    /* background-color: rgba(255, 255, 255, .8); */
     border: 1px solid grey;
     margin-right: 3rem;
 }
@@ -74,6 +73,7 @@ default scroll bar
 .icons li {
     padding-left: 1rem;
     font-size: 1rem;
+    color: 	#B0C4DE;
 }
 
 .title {

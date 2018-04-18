@@ -20,7 +20,11 @@ const data = newsapi.v2.everything({
     sortBy: 'publishedAt',
     page: 20
 }).then(res => {
-    console.log(res)
+    console.log(res.articles)
+    res.articles.forEach(article => {
+        var li = document.createElement('li').innerHTML(article)
+        document.getElemendByClass('api').appendChild(li)
+    })
 });
 // app.get('/', (req, res) => {
 //     res.send(data)
