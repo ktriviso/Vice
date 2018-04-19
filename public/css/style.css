@@ -92,7 +92,23 @@ form {
 }
 
 .form {
-    border: 1px solid black;
+    width: 40%;
+    height: max-content;
+    margin: auto;
+    margin-top: 4rem;
+}
+
+.form input {
+    background-color: #B0C4DE;
+    font-size: 1rem;
+    color: white!important;
+    margin: .5rem;
+    padding: .3rem;
+}
+
+#submit {
+    width: 50%;
+    margin-left: 9rem;
 }
 
 .article-container {

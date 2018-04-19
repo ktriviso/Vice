@@ -1,13 +1,26 @@
 <% include ./partials/boilerplate.ejs %>
 
     <body>
-        <form  action="/database" method="POST">
-            <input class="form" id="title" type="text" name="title" placeholder="title" />
-            <input class="form" id="author" type="text" name="author" placeholder="author" />
-            <input class="form" id="description" type="text" name="description" placeholder="description" />
-            <input class="form" id="description" type="text" name="url" placeholder="url" />
-            <input class="form" type="submit" value="submit"/>
-        </form>
+
+        <header>
+            <nav>
+                <ul>
+                    <li class="title">Make Me</li>
+                    <li><a href="/">Go back</a></li>
+                </ul>
+            </nav>
+        </header>
+
+
+        <div class="form">
+            <form  action="/database" method="POST">
+                <input type="text" name="title" placeholder="title" />
+                <input type="text" name="author" placeholder="author" />
+                <input type="text" name="description" placeholder="description" />
+                <input type="text" name="url" placeholder="url" />
+                <input id="submit" type="submit" value="submit"/>
+            </form>
+        </div>
     </body>
 
 <% include ./partials/end.ejs %>
