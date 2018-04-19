@@ -4,7 +4,7 @@ const views = require('../controllers/viewsController.js');
 
 const router = express.Router();
 
-router.route('database/single/:id/edit')
+router.route('/database/single/:id/edit')
     .get(controller.show, views.showEditForm)
 
 router.route('/database/single/:id')

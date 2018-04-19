@@ -2,13 +2,23 @@
 
     <body>
 
+        <header>
+            <nav>
+                <ul>
+                    <li class="title">Edit Me</li>
+                    <li><a href="/database">Go back</a></li>
+                </ul>
+            </nav>
+        </header>
+
+
         <div class="form">
             <form  action="/database/single/<%= data.id%>/?_method=PUT" method="POST">
-                <input id="title" type="text" name="title" value="<%= article.title %>" />
-                <input id="author" type="text" name="author" value="<%= article.author %>" />
-                <input id="description" type="text" name="description" value="<%= article.description %>" />
-                <input id="url" type="text" name="url" value="<%= article.url %>" />
-                <input type="submit" value="submit"/>
+                <input type="text" name="title" value="<%= article.title %>" />
+                <input type="text" name="author" value="<%= article.author %>" />
+                <input type="text" name="description" value="<%= article.description %>" />
+                <input type="text" name="url" value="<%= article.url %>" />
+                <input id="submit" type="submit" value="submit"/>
             </form>
         </div>
 

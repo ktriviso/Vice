@@ -29,7 +29,7 @@ module.exports= {
 
     update(article){
         return db.one(`
-            UPDATE article
+            UPDATE articles
             SET
             title = $/title/,
             author = $/author/,
