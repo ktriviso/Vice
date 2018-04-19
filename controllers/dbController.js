@@ -49,6 +49,19 @@ module.exports = {
             });
     },
 
+    update(req, res, next) {
+        // you need to have this since the user doesnt have access
+        req.body.id = req.params.id
+        db.update(req.body)
+            .then(article => {
+                res.locals.article = article;
+                next();
+            })
+            .catch(err => {
+                next(err);
+            })
+    },
+
     create(req, res, next) {
         // do i have to do something to the body??
         // req.body ==== article param in the dbModels.create

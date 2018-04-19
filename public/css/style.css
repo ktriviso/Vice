@@ -91,6 +91,10 @@ form {
     margin-bottom: 1rem;
 }
 
+.form {
+    border: 1px solid black;
+}
+
 .article-container {
     width: 50%;
     height: 65vh;

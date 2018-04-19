@@ -27,6 +27,19 @@ module.exports= {
         `, id);
     },
 
+    update(article){
+        return db.one(`
+            UPDATE article
+            SET
+            title = $/title/,
+            author = $/author/,
+            description = $/description/,
+            url = $/url/
+            WHERE id = $/id/
+            returning *
+        `, article);
+    },
+
     handleSubmit(article) {
         return db.one(`
             INSERT INTO articles

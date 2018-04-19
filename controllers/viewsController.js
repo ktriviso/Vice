@@ -21,6 +21,11 @@ module.exports = {
         })
     },
 
+    handleUpdate(req, res) {
+        let id = req.params.id
+        res.redirect(`/database/single/${id}`)
+    },
+
     // if you change, edit or delete, just go back to the database
     handleCreate(req, res) {
         res.redirect('/')
@@ -28,6 +33,16 @@ module.exports = {
 
     handleDelete(req, res) {
         res.redirect('/database')
+    },
+
+    showEditForm(req, res) {
+        res.render('edit', {
+            data: res.locals.article
+        })
+    },
+
+    showAddForm(req, res) {
+        res.render('add')
     },
 
 };
