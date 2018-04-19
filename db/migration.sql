@@ -18,6 +18,5 @@ CREATE TABLE users (
   email VARCHAR(255) UNIQUE NOT NULL,
   firstname VARCHAR(255),
   lastname VARCHAR(255),
-  avatar TEXT,
   date_created TIMESTAMP NOT NULL DEFAULT NOW()
 );
