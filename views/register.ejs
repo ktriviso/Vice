@@ -1,0 +1,16 @@
+<% include ./partials/boilerplate.ejs %>
+
+    <body>
+
+        <form method='POST' action='/auth/register'>
+            <input class="form" type="text" placeholder="First" name="fname">
+            <input class="form" type="text" placeholder="Last" name="lname">
+            <input class="form" type="text" placeholder="email" name="email">
+            <input class="form" type="text" placeholder="userName" name="userName">
+            <input class="form" type="text" placeholder="password" name="password">
+            <input class="form" type="submit" value="Register" />
+        </form>
+
+    </body>
+
+<% include ./partials/end.ejs %>
