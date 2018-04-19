@@ -37,10 +37,17 @@ select {
 
 span {
     padding: 5rem;
-    color: 	#B0C4DE;
     position: absolute;
     bottom: 0;
     right: 0;
+}
+
+svg {
+    color: 	#B0C4DE!important;
+}
+
+form {
+    margin-bottom: 1rem;
 }
 
 /* --------------------------------
@@ -54,26 +61,17 @@ default scroll bar
     width: 45%;
     height: 50vh;
     margin: 0;
-    font-size: 1.3rem;
     overflow: scroll;
     padding: 1rem;
     position: absolute;
     right: 0;
     border: 1px solid grey;
     margin-right: 3rem;
+    background-color: white;
 }
 
-.icons {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    padding-bottom: 1rem;
-}
-
-.icons li {
-    padding-left: 1rem;
-    font-size: 1rem;
-    color: 	#B0C4DE;
+#view {
+    padding-right: 1rem;
 }
 
 .title {
@@ -84,6 +82,34 @@ default scroll bar
     letter-spacing: 2px;
     margin-top: 0;
     line-height: 4rem;
+}
+
+#title {
+    font-size: 1.28rem;font-weight: 500;
+}
+
+#author {
+    font-size: .8rem;
+}
+
+#description {
+    font-size: 1rem;
+}
+
+/* --------------------------------
+form css reset
+--------------------------------- */
+
+input {
+    -webkit-appearance: none;
+    background-color: white;
+    cursor: arrow;
+    padding: 0;
+    border: none;
+    font-family: 'Oswald', sans-serif!important;
+    width: 100%;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
 }
 
 /* --------------------------------
@@ -102,6 +128,7 @@ https://codepen.io/bisaillonyannick/pen/pvZeGg
     text-transform: uppercase;
     font-size: .8rem;
 }
+
 .bounce {
   -webkit-animation: bounce 2s infinite;
   animation: bounce 2s infinite;

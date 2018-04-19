@@ -1,10 +1,10 @@
-\c books_server_db
+\c vice_db
 
-DROP TABLE IF EXISTS books;
+DROP TABLE IF EXISTS articles;
 
-CREATE TABLE books (
+CREATE TABLE articles (
   id SERIAL PRIMARY KEY,
-  content TEXT,
   author TEXT,
-  genre_id INT
+  title TEXT,
+  description TEXT
 );
