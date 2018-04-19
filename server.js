@@ -5,6 +5,8 @@ const methodOverride = require('method-override');
 const bodyParser = require('body-parser');
 const session = require('express-session');
 
+const authService  = require('./user/auth/AuthService.js');
+const authRouter  = require('./user/auth/AuthRouter.js');
 const router = require('./routes/dbRoutes.js');
 const PORT = process.env.PORT || 3000;
 const app = express();

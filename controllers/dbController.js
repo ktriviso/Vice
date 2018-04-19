@@ -65,7 +65,7 @@ module.exports = {
     destroy(req, res, next) {
         db.destroy(req.params.id)
             .then(() => {
-
+                next();
             })
             .catch(err => {
                 next(err);

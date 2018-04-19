@@ -76,6 +76,13 @@ select {
     outline: none;
 }
 
+span {
+    padding: 5rem;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
 svg {
     color: 	#B0C4DE!important;
 }
