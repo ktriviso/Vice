@@ -52,7 +52,6 @@ module.exports = {
     update(req, res, next) {
         // you need to have this since the user doesnt have access
         req.body.id = req.params.id
-        console.log(req.body)
         db.update(req.body)
             .then(article => {
                 res.locals.article = article;
