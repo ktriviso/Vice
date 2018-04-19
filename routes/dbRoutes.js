@@ -6,7 +6,7 @@ const router = express.Router();
 
 router.route('/database/single/:id')
     .get(controller.show, views.showOne)
-//     .delete(controller.destroy, views.handleDelete)
+    .delete(controller.destroy, views.handleDelete)
 
 router.route('/database')
     .get(controller.index, views.showAll)

@@ -52,6 +52,17 @@ header ul {
     text-transform: uppercase;
 }
 
+.inline {
+    width: max-content;
+    font-weight: 900;
+    color: #B0C4DE;
+    font-size: 1rem;
+}
+
+.inline:hover {
+    color: black;
+}
+
 
 ul {
     list-style: none;
@@ -63,13 +74,6 @@ select {
     font-size: 1rem;
     background-color: transparent;
     outline: none;
-}
-
-span {
-    padding: 5rem;
-    position: absolute;
-    bottom: 0;
-    right: 0;
 }
 
 svg {
@@ -96,7 +100,8 @@ form {
     width: 50%;
     position: absolute;
     right: 0;
-    padding-right: 2rem;
+    padding-right: 1rem;
+    top: 40%;
 }
 
 .database h1 {

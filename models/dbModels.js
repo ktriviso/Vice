@@ -30,8 +30,8 @@ module.exports= {
     handleSubmit(article) {
         return db.one(`
             INSERT INTO articles
-            (title, author, description)
-            VALUES ($/title/, $/author/, $/description/)
+            (title, author, description, url)
+            VALUES ($/title/, $/author/, $/description/, $/url/)
             RETURNING *
         `, article);
     },
