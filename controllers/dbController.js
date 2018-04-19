@@ -18,10 +18,6 @@ module.exports = {
             page: 20
         }).then(data => {
             res.locals.articles = data.articles
-            // console.log(res.locals.articles)
-            // res.locals.articles.forEach(data => {
-            //     console.log(data.title)
-            // })
             next();
         }).catch(err => {
             next(err);
@@ -42,7 +38,7 @@ module.exports = {
     },
 
     show(req, res, next) {
-        db.findOne()
+        db.findOne(req.params.id)
             .then(data => {
                 res.locals.article = data;
             })
@@ -52,9 +48,10 @@ module.exports = {
     },
 
     create(req, res, next) {
+        // do i have to do something to the body??
+        // req.body ==== article param in the dbModels.create
         db.handleSubmit(req.body)
             .then(article => {
-                // grab the informatio from the post to send into the db
                 res.locals.article = article;
                 next();
             })

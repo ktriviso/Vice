@@ -27,13 +27,12 @@ module.exports= {
         `, id);
     },
 
-    // i just want the button's css to change, I do not want a returned item
     handleSubmit(article) {
         return db.one(`
-            INTSERT INTO articles
+            INSERT INTO articles
             (title, author, description)
             VALUES ($/title/, $/author/, $/description/)
             RETURNING *
-        `, article)
-    }
+        `, article);
+    },
 }

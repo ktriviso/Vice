@@ -7,7 +7,10 @@ module.exports = {
     },
 
     showOne(req, res) {
-        res.send(res.locals.article);
+        console.log('look hereeee', res.locals.article)
+        res.render('single', {
+            data: res.locals.article
+        })
     },
 
     // this is for the homepage
@@ -19,7 +22,7 @@ module.exports = {
 
     // if you change, edit or delete, just go back to the database
     handleCreate(req, res) {
-        res.redirect('/database')
+        res.redirect('/')
     },
 
     handleDelete(req, res) {
