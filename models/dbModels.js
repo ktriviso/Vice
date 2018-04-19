@@ -48,4 +48,26 @@ module.exports= {
             RETURNING *
         `, article);
     },
+
+    saveUser(user) {
+        return db.one(`
+            INSERT INTO users (username, password_digest, email, firstname, lastname)
+            VALUES (
+                $/username/,
+                $/password_digest/,
+                $/email/,
+                $/firstname/,
+                $/lastname/,
+            )
+            ON CONFLICT (username) DO UPDATE
+            SET
+            username = $/username/,
+            password_digest = $/password_digest/,
+            email = $/email/,
+            firstname $/firstname/,
+            lastname = $/lastname/,
+            RETURNING *
+        `, user);
+
+    },
 }

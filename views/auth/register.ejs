@@ -1,16 +1,18 @@
-<% include ./partials/boilerplate.ejs %>
-
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
     <body>
-
-        <form method='POST' action='/auth/register'>
-            <input class="form" type="text" placeholder="First" name="fname">
-            <input class="form" type="text" placeholder="Last" name="lname">
-            <input class="form" type="text" placeholder="email" name="email">
-            <input class="form" type="text" placeholder="userName" name="userName">
-            <input class="form" type="text" placeholder="password" name="password">
-            <input class="form" type="submit" value="Register" />
-        </form>
-
+        this is the register page
+            <form method='POST' action='/auth/register'>
+                <input class="form" type="text" placeholder="First" name="fname">
+                <input class="form" type="text" placeholder="Last" name="lname">
+                <input class="form" type="text" placeholder="email" name="email">
+                <input class="form" type="text" placeholder="userName" name="userName">
+                <input class="form" type="text" placeholder="password" name="password">
+                <input class="form" type="submit" value="Register" />
+            </form>
     </body>
-
-<% include ./partials/end.ejs %>
+</html>

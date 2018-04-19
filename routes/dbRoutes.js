@@ -19,6 +19,9 @@ router.route('/database')
 
 router.get('/new', views.showAddForm);
 
+router.route('/login')
+    .get(ViewController.showRegisterForm)
+
 router.route('/')
     .get(controller.data, views.showArticle)
     // no post, youre adding to the db, not home page

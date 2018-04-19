@@ -45,4 +45,8 @@ module.exports = {
         res.render('add')
     },
 
+    showRegisterForm(req, res) {
+        res.render('auth/register');
+    },
+
 };
