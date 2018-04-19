@@ -46,7 +46,15 @@ module.exports = {
     },
 
     showRegisterForm(req, res) {
-        res.render('auth/register');
+        res.render('register', {
+            data: res.locals.user
+        });
+    },
+
+    handleCreateUser(req, res) {
+        // checking if the user is coming through
+        // console.log(res.locals.user)
+        res.redirect('/')
     },
 
 };

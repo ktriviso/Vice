@@ -57,15 +57,15 @@ module.exports= {
                 $/password_digest/,
                 $/email/,
                 $/firstname/,
-                $/lastname/,
+                $/lastname/
             )
             ON CONFLICT (username) DO UPDATE
             SET
             username = $/username/,
             password_digest = $/password_digest/,
             email = $/email/,
-            firstname $/firstname/,
-            lastname = $/lastname/,
+            firstname = $/firstname/,
+            lastname = $/lastname/
             RETURNING *
         `, user);
 

@@ -85,4 +85,15 @@ module.exports = {
             });
     },
 
+    login(req, res, next) {
+        db.saveUser(req.body)
+            .then(user => {
+                res.locals.user = user;
+                next();
+            })
+            .catch(err => {
+                next(err);
+            });
+    },
+
 };
