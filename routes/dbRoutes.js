@@ -4,16 +4,14 @@ const views = require('../controllers/viewsController.js');
 
 const router = express.Router();
 
-
+router.route('/database/single/:id')
+    .get(controller.show, views.showOne)
+//     .delete(controller.destroy, views.handleDelete)
 
 router.route('/database')
     .get(controller.index, views.showAll)
     // .post route to recieve the ajax
     .post(controller.create, views.handleCreate)
-
-router.route('/:id')
-    .get(controller.show, views.showOne)
-//     .delete(controller.destroy, views.handleDelete)
 
 router.route('/')
     .get(controller.data, views.showArticle)

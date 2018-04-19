@@ -1,7 +1,23 @@
-<% include ./partials/boilerplate %>
+<% include ./partials/boilerplate.ejs %>
 
-<div class="article-container">
-    <h1><%=article.title%></h1>
-</div>
+    <body class="homepage">
 
-<% include ./partials/end %>
+        <header>
+            <nav>
+                <ul>
+                    <li><h1 class="title">READ ME</h1></li>
+                    <li><button type="button" name="button">Home</button></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="article">
+            <h1><%=article.title%></h1>
+            <h3><%=article.author%></h3>
+            <p><%=article.description%>...</p>
+            <p>See full page details <a href="<%=article.url%>" style="color: #B0C4DE;">here</a></p>
+        </div>
+    </body>
+
+
+<% include ./partials/end.ejs %>

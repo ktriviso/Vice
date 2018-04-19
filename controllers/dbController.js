@@ -18,6 +18,7 @@ module.exports = {
             page: 20
         }).then(data => {
             res.locals.articles = data.articles
+            console.log('this is the dataaaa', data)
             next();
         }).catch(err => {
             next(err);
@@ -41,6 +42,7 @@ module.exports = {
         db.findOne(req.params.id)
             .then(data => {
                 res.locals.article = data;
+                next();
             })
             .catch(err => {
                 next(err);

@@ -3,11 +3,12 @@ module.exports = {
     // this is going to be for the datbase view
     // show all the articles that have been added
     showAll(req, res) {
-        res.send(res.locals.articles);
+        res.render('database', {
+            data: res.locals.articles
+        })
     },
 
     showOne(req, res) {
-        console.log('look hereeee', res.locals.article)
         res.render('single', {
             data: res.locals.article
         })

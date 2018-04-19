@@ -1,14 +1,43 @@
+/* --------------------------------
+default scroll bar
+--------------------------------- */
+::-webkit-scrollbar {
+    display: none;
+}
+
+/* --------------------------------
+views css
+--------------------------------- */
+
 body {
-    font-size: 100%;
-    background-image: url('/white.jpg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
     font-family: 'Oswald', sans-serif;
     height: 100vh;
     width: 100%;
     font-weight: lighter;
     letter-spacing: 1px;
+    font-size: 100%;
+}
+
+/* this is the body for the homepage and single article view*/
+.homepage {
+    background-image: url('/white.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+/* this is the body for the database */
+.database {
+
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    color: #B0C4DE;
 }
 
 header ul {
@@ -19,9 +48,10 @@ header ul {
     justify-content: space-around;
     padding: 1.3rem;
     padding-bottom: 0;
-    margin-bottom: 2rem;
+    margin-bottom: 0;
     text-transform: uppercase;
 }
+
 
 ul {
     list-style: none;
@@ -50,11 +80,33 @@ form {
     margin-bottom: 1rem;
 }
 
-/* --------------------------------
-default scroll bar
---------------------------------- */
-::-webkit-scrollbar {
-    display: none;
+.article-container {
+    width: 50%;
+    height: 65vh;
+    margin: auto;
+    overflow: scroll;
+}
+
+.article-container ul {
+    overflow: scroll;
+    padding-top: 0;
+}
+
+.article {
+    width: 50%;
+    position: absolute;
+    right: 0;
+    padding-right: 2rem;
+}
+
+.database h1 {
+    text-transform: uppercase;
+    font-size: 4rem;
+    font-weight: bold;
+    padding: 0;
+    padding-left: 1rem;
+    margin: 0;
+    padding-bottom: .5rem;
 }
 
 .container {
@@ -82,6 +134,7 @@ default scroll bar
     letter-spacing: 2px;
     margin-top: 0;
     line-height: 4rem;
+    margin-bottom: 2rem;
 }
 
 #title {
@@ -117,11 +170,22 @@ default scroll bar
 https://codepen.io/bisaillonyannick/pen/pvZeGg
 --------------------------------- */
 
-.arrow {
-    text-align: center;
+.homepage .arrow {
     position: absolute;
     bottom: 50%;
     right: 55%;
+}
+
+.database .arrow {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    padding-bottom: 1.5rem;
+}
+
+.arrow {
+    text-align: center;
     color: black;
     font-weight: lighter;
     letter-spacing: 1px;

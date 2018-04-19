@@ -3,6 +3,8 @@ const path = require('path');
 const logger = require('morgan');
 const methodOverride = require('method-override');
 const bodyParser = require('body-parser');
+const session = require('express-session');
+
 const router = require('./routes/dbRoutes.js');
 const PORT = process.env.PORT || 3000;
 const app = express();
