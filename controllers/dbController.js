@@ -19,7 +19,6 @@ module.exports = {
             page: 20
         }).then(data => {
             res.locals.articles = data.articles
-            console.log('this is the dataaaa', data)
             next();
         }).catch(err => {
             next(err);
@@ -49,6 +48,17 @@ module.exports = {
                 next(err);
             });
     },
+
+    // showUser(req, res, next) {
+    //     db.findOneUser(req,params.id)
+    //         .then(data => {
+    //             res.locals.user = user;
+    //             next();
+    //         })
+    //         .catch(err => {
+    //             next(err);
+    //         });
+    // },
 
     update(req, res, next) {
         // you need to have this since the user doesnt have access
@@ -90,7 +100,8 @@ module.exports = {
             });
     },
 
-    newUser(req, res, next) {
+    async newUser(req, res, next) {
+        req.body.password_digest = await bcrypt.hash(req.body.password, 5);
         db.saveUser(req.body)
             .then(user => {
                 res.locals.user = user;
@@ -102,17 +113,20 @@ module.exports = {
     },
 
     async login(req, res, next) {
-
         try {
-            const { username, password } = req.body;
-            const user = await User.findOne(username);
-            const valid = await bcrypt.compare(password, user.password_digset);
+            const { username, password_digest } = req.body;
+            console.log('mybod', req.body)
+            const user = await db.findOneUser(username);
+            console.log(password_digest, user.password_digest)
+            const valid = await bcrypt.compare(password_digest, user.password_digest);
+            console.log(valid)
 
             if(!valid) {
                 throw { message: 'wrong password' }
             }
+            
+            req.session.user = user;
 
-            rec.session.user = user;
             next();
         } catch (err) {
             next(err);

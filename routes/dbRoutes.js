@@ -28,7 +28,6 @@ router.route('/register')
     .get(views.showRegisterForm)
     .post(controller.newUser, views.handleCreateUser)
 
-
 router.route('/')
     .get(controller.data, views.showArticle)
 

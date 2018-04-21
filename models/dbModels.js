@@ -59,6 +59,15 @@ module.exports= {
         `, `${user_id}, ${article_id}`);
     },
 
+// { username: 'a', password_digest: 'a' }
+    findOneUser(username) {
+        return db.one(`
+            SELECT *
+            FROM users
+            WHERE username = '${username}'
+        `);
+    },
+
     saveUser(user) {
         return db.one(`
             INSERT INTO users (username, password_digest, email, firstname, lastname)

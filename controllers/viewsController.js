@@ -58,7 +58,7 @@ module.exports = {
     handleCreateUser(req, res) {
         // checking if the user is coming through
         // console.log(res.locals.user)
-        res.redirect('/')
+        res.send('yeah yeah you got it bitch')
     },
 
     handleLogout(req, res) {
