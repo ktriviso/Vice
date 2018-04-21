@@ -2,12 +2,19 @@
 
     <body>
 
-        <h1>LOG IN FORM</h1>
+        <header>
+            <nav>
+                <ul>
+                    <li class="title">Login Here</li>
+                    <li><a href="/register">Not yet Registered?</a></li>
+                </ul>
+            </nav>
+        </header>
         <div class="form">
             <form method="POST" action="/auth/login">
-                <input class="form" type="text" placeholder="userName" name="userName">
-                <input class="form" type="text" placeholder="password" name="password">
-                <input id="submit" class="form" type="submit" value="Sign In" />
+                <input type="text" placeholder="userName" name="userName">
+                <input type="text" placeholder="password" name="password">
+                <input class="submit" class="form" type="submit" value="Sign In" />
             </form>
         </div>
 

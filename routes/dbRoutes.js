@@ -16,11 +16,18 @@ router.route('/database')
     .get(controller.index, views.showAll)
     .post(controller.create, controller.createReference, views.handleCreate)
 
-router.get('/new', views.showAddForm);
+router.get('/new', views.showAddForm)
+
+router.route('/login')
+    .get(views.showLoginForm)
+    .post(controller.login, views.handleCreateUser)
+
+router.get('/logout', controller.logout, views.handleLogout,);
 
 router.route('/register')
     .get(views.showRegisterForm)
-    .post(controller.login, views.handleCreateUser)
+    .post(controller.newUser, views.handleCreateUser)
+
 
 router.route('/')
     .get(controller.data, views.showArticle)
