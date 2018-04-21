@@ -45,8 +45,18 @@ module.exports= {
             INSERT INTO articles
             (title, author, description, url)
             VALUES ($/title/, $/author/, $/description/, $/url/)
-            RETURNING *
+            RETURNING id
         `, article);
+    },
+
+    handleSubmitPartTwo(user_id, article_id) {
+        return db.none(`
+            INSERT INTO reference (user_id, article_id)
+            VALUES (
+                $/user_id/,
+                $/article_id/
+            )
+        `, `${user_id}, ${article_id}`);
     },
 
     saveUser(user) {

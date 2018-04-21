@@ -14,7 +14,7 @@ router.route('/database/single/:id')
 
 router.route('/database')
     .get(controller.index, views.showAll)
-    .post(controller.create, views.handleCreate)
+    .post(controller.create, controller.createReference, views.handleCreate)
 
 router.get('/new', views.showAddForm);
 

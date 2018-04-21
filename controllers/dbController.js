@@ -62,9 +62,8 @@ module.exports = {
             })
     },
 
+    // this is the handle submit
     create(req, res, next) {
-        // do i have to do something to the body??
-        // req.body ==== article param in the dbModels.create
         db.handleSubmit(req.body)
             .then(article => {
                 res.locals.article = article;
@@ -73,6 +72,11 @@ module.exports = {
             .catch(err => {
                 next(err);
             });
+    },
+
+    createReference(req, res, next) {
+        db.handleSubmitPartTwo(req.params.id, res.locals.article)
+        next();
     },
 
     destroy(req, res, next) {

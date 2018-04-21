@@ -2,6 +2,7 @@
 
 DROP TABLE IF EXISTS articles;
 DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS reference;
 
 CREATE TABLE articles (
   id SERIAL PRIMARY KEY,
@@ -19,4 +20,9 @@ CREATE TABLE users (
   firstname VARCHAR(255),
   lastname VARCHAR(255),
   date_created TIMESTAMP NOT NULL DEFAULT NOW()
+);
+
+CREATE TABLE reference (
+    user_id INT,
+    article_id INT
 );
