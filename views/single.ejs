@@ -17,8 +17,9 @@
                 <input id="title" type="text" name="title" value="<%= article.title %>" />
                 <input id="author" type="text" name="author" value="<%= article.author %>" />
                 <input id="description" type="text" name="description" value="<%= article.description %>..." />
-                <a href="<%= article.url %>"><i id="view" class="fas fa-desktop"></i></a>
-                <a href="/database/single/<%= article.id %>/edit"><i id="view" class="fas fa-pencil-alt"></i></a>
+                <a href="<%= article.url %>"><i class="fas fa-desktop"></i></a>
+                <a href="/database/single/<%= article.id %>/edit"><i  class="fas fa-pencil-alt"></i></a>
+                <i class="fas fa-share" onClick="alert('Copy and paste this URL: <%= article.url %>')"></i>
                 <input type="submit" value="delete" class="inline"/>
             </form>
         </div>

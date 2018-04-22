@@ -56,13 +56,15 @@ module.exports = {
     },
 
     handleCreateUser(req, res) {
-        // checking if the user is coming through
-        // console.log(res.locals.user)
-        res.send('yeah yeah you got it bitch')
+        // res.render('home', {
+        //     data: res.locals.articles
+        // });
+        // why can i not use the code above?
+        res.redirect('/');
     },
 
     handleLogout(req, res) {
-      res.redirect('/');
+      res.redirect('/login');
     },
 
 };

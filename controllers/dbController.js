@@ -120,18 +120,14 @@ module.exports = {
             console.log(password_digest, user.password_digest)
             const valid = await bcrypt.compare(password_digest, user.password_digest);
             console.log(valid)
-
             if(!valid) {
                 throw { message: 'wrong password' }
             }
-            
             req.session.user = user;
-
             next();
         } catch (err) {
             next(err);
         }
-
     },
 
     logout(req, res, next) {
