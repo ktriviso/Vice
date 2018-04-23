@@ -2,8 +2,7 @@ const db = require('../config/dbConfig.js');
 
 module.exports = {
 
-// this shows all users saved data
-// this is not being used anywhere
+
   findAll() {
     return db.many(`
             SELECT *

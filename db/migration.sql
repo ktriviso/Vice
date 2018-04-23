@@ -1,4 +1,4 @@
--- \c vice_db
+\c vice_db
 
 DROP TABLE IF EXISTS articles;
 DROP TABLE IF EXISTS users;
