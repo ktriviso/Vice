@@ -6,7 +6,7 @@ module.exports = {
     // this is the api call
     data(req, res, next) {
         const NewsAPI = require('newsapi');
-        const newsapi = new NewsAPI('a66af1cffec146d9a6e58897bd1917ed');
+        const newsapi = new NewsAPI(process.env.API_KEY);
 
         newsapi.v2.everything({
             q: 'general',
