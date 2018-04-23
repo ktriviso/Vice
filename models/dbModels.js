@@ -2,15 +2,16 @@ const db = require('../config/dbConfig.js');
 
 module.exports = {
 
-  // this is going to be for the datbase view
-  // show all the articles that have been added
+// this shows all users saved data
+// this is not being used anywhere
   findAll() {
     return db.many(`
             SELECT *
             FROM articles
         `);
   },
-
+  // this is going to be for the datbase view
+  // show all the articles that have been added
   correctedShowAll(id){
       return db.many(`
           SELECT *
