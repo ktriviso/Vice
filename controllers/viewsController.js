@@ -16,9 +16,16 @@ module.exports = {
 
     // this is for the homepage
     showArticle(req, res) {
-        res.render('home', {
-            data: res.locals.articles
-        })
+        if(!req.session.user) {
+            console.log('youre not logged in')
+            res.redirect('/login')
+        } else {
+            console.log('youre logged in as: ', req.session.user.username)
+            res.render('home', {
+                data: res.locals.articles
+            })
+        }
+
     },
 
     handleUpdate(req, res) {

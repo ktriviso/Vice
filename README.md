@@ -20,7 +20,7 @@ The schedule below reflects the required deadlines and was used to keep track of
 
 ## Project Description
 
-Vice Feed uses the Vice API to create a scrollable column of news articles. The app will have full CRUD App functionality; save article to database, view, full article, edit article, delete from database and sign in flow with encrypted authentication.
+Vice Feed uses the Vice API to create a scrollable column of news articles. The app will have full CRUD App functionality; save article to database, create custom article, view single article, edit article, delete from database, share url for article, and sign in flow with encrypted authentication.
 
 ![Final Version](http://)
 
@@ -33,6 +33,8 @@ Prioritized features include the following:
 -   Log in flow
 -   EJS for all views
 -   Save articles to database
+-   Create custom article
+-   Share article URL
 -   View Full article
 -   Edit articles that have been saved
 -   Delete articles from database
@@ -54,15 +56,17 @@ The functionality is divided into two separate lists: MPV and PostMVP.
 
 | Component      | MPV / PostMVP | Estimated Time | Actual Invested |
 | -------------- | :-----------: |  :-----------: | :-------------: |
-| Design         | MPV           | 1hrs           | 1hrs            |
-| Mobile Design  | MPV           | 1hrs           | 0hrs            |
-| API            | MPV           | 1hrs           | 6hrs            |
-| Database       | MPV           | 3hrs           | 10hrs           |
+| Design         | MPV           | 1hrs           | 2hrs            |
+| API            | MPV           | 1hrs           | 2hrs            |
+| Database       | MPV           | 3hrs           | 12hrs           |
 | Routes         | MPV           | 2hrs           | 6hrs            |
 | Controller     | MPV           | 2hrs           | 4hrs            |
 | Form           | MPV           | 1hrs           | 2hrs            |
-| Sign-in Flow   | MPV           | 5min           | 12hrs           |
+| Sign-in Flow   | MPV           | 5min           | 8hrs            |
 | ESJ Views      | PostMVP       | 2hrs           | 2hrs            |
+| Custom Article | PostMVP       | 1hrs           | 1hrs            |
+| -------------- | :-----------: |  :-----------: | :-------------: |
+| Total          |               | 19hrs          | 39hrs           |
 
 
 ## Wireframes
@@ -108,6 +112,7 @@ The following code is encapsulated for the purpose of reusability.
 | Function     | Description                                                          |
 | ------------ | -------------------------------------------------------------------- |
 | Article View | Article view is rendered by clicking button on multiple pages in app |
+| Forms        | Forms are designed using CSS classes for easy reusability            |
 
 
 ## Additional Libraries
