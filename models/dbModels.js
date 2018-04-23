@@ -1,34 +1,34 @@
 const db = require('../config/dbConfig.js');
 
-module.exports= {
+module.exports = {
 
-    // this is going to be for the datbase view
-    // show all the articles that have been added
-    findAll() {
-        return db.many(`
+  // this is going to be for the datbase view
+  // show all the articles that have been added
+  findAll() {
+    return db.many(`
             SELECT *
             FROM articles
         `);
-    },
+  },
 
-    findOne(id) {
-        return db.one(`
+  findOne(id) {
+    return db.one(`
             SELECT *
             FROM articles
             WHERE id = $1
         `, id);
-    },
+  },
 
-    destroy(id) {
-        return db.none(`
+  destroy(id) {
+    return db.none(`
             DELETE
             FROM articles
             WHERE id = $1
         `, id);
-    },
+  },
 
-    update(article){
-        return db.one(`
+  update(article) {
+    return db.one(`
             UPDATE articles
             SET
             title = $/title/,
@@ -38,19 +38,19 @@ module.exports= {
             WHERE id = $/id/
             returning *
         `, article);
-    },
+  },
 
-    handleSubmit(article) {
-        return db.one(`
+  handleSubmit(article) {
+    return db.one(`
             INSERT INTO articles
             (title, author, description, url)
             VALUES ($/title/, $/author/, $/description/, $/url/)
             RETURNING id
         `, article);
-    },
+  },
 
-    handleSubmitPartTwo(user_id, article_id) {
-        return db.one(`
+  handleSubmitPartTwo(user_id, article_id) {
+    return db.one(`
             INSERT INTO reference (user_id, article_id)
             VALUES (
                 ${user_id},
@@ -58,19 +58,19 @@ module.exports= {
             )
             RETURNING *
         `);
-    },
+  },
 
-// { username: 'a', password_digest: 'a' }
-    findOneUser(username) {
-        return db.one(`
+  // { username: 'a', password_digest: 'a' }
+  findOneUser(username) {
+    return db.one(`
             SELECT *
             FROM users
             WHERE username = '${username}'
         `);
-    },
+  },
 
-    saveUser(user) {
-        return db.one(`
+  saveUser(user) {
+    return db.one(`
             INSERT INTO users (username, password_digest, email, firstname, lastname)
             VALUES (
                 $/username/,
@@ -89,5 +89,5 @@ module.exports= {
             RETURNING *
         `, user);
 
-    },
+  },
 }

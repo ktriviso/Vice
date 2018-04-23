@@ -1,8 +1,9 @@
 /* --------------------------------
 default scroll bar
 --------------------------------- */
+
 ::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 /* --------------------------------
@@ -10,180 +11,179 @@ views css
 --------------------------------- */
 
 body {
-    font-family: 'Oswald', sans-serif;
-    height: 100vh;
-    width: 100%;
-    font-weight: lighter;
-    letter-spacing: 1px;
-    font-size: 100%;
+  font-family: 'Oswald', sans-serif;
+  height: 100vh;
+  width: 100%;
+  font-weight: lighter;
+  letter-spacing: 1px;
+  font-size: 100%;
 }
 
 /* this is the body for the homepage and single article view*/
+
 .homepage {
-    background-image: url('/white.jpg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+  background-image: url('/white.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 /* this is the body for the database */
-.database {
 
-}
+.database {}
 
 a {
-    text-decoration: none;
-    color: black;
+  text-decoration: none;
+  color: black;
 }
 
 a:hover {
-    color: #B0C4DE;
+  color: #B0C4DE;
 }
 
 header ul {
-    list-style: none;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-around;
-    padding: 1.3rem;
-    padding-bottom: 0;
-    margin-bottom: 0;
-    text-transform: uppercase;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  padding: 1.3rem;
+  padding-bottom: 0;
+  margin-bottom: 0;
+  text-transform: uppercase;
 }
 
 .inline {
-    width: max-content;
-    font-weight: 900;
-    color: #B0C4DE;
-    font-size: 1rem;
+  width: max-content;
+  font-weight: 900;
+  color: #B0C4DE;
+  font-size: 1rem;
 }
 
 .inline:hover {
-    color: black;
+  color: black;
 }
 
-
 ul {
-    list-style: none;
-    padding: 1rem;
+  list-style: none;
+  padding: 1rem;
 }
 
 select {
-    border: none;
-    font-size: 1rem;
-    background-color: transparent;
-    outline: none;
+  border: none;
+  font-size: 1rem;
+  background-color: transparent;
+  outline: none;
 }
 
 span {
-    padding: 5rem;
-    position: absolute;
-    bottom: 0;
-    right: 0;
+  padding: 5rem;
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
 
 svg {
-    color: 	#B0C4DE!important;
+  color: #B0C4DE !important;
 }
 
 form {
-    margin-bottom: 1rem;
+  margin-bottom: 1rem;
 }
 
 .form {
-    width: 40%;
-    height: max-content;
-    margin: auto;
-    margin-top: 4rem;
+  width: 40%;
+  height: max-content;
+  margin: auto;
+  margin-top: 4rem;
 }
 
 .form input {
-    background-color: #B0C4DE;
-    font-size: 1rem;
-    color: white!important;
-    margin: .5rem;
-    padding: .4rem;
+  background-color: #B0C4DE;
+  font-size: 1rem;
+  color: white !important;
+  margin: .5rem;
+  padding: .4rem;
 }
 
 input.submit {
-    width: 50%;
-    margin-left: 9rem;
+  width: 50%;
+  margin-left: 9rem;
 }
 
 input.submit:hover {
-    background-color: black;
+  background-color: black;
 }
 
-
 .article-container {
-    width: 50%;
-    height: 65vh;
-    margin: auto;
-    overflow: scroll;
+  width: 50%;
+  height: 65vh;
+  margin: auto;
+  overflow: scroll;
 }
 
 .article-container ul {
-    overflow: scroll;
-    padding-top: 0;
+  overflow: scroll;
+  padding-top: 0;
 }
 
 .article {
-    width: 50%;
-    position: absolute;
-    right: 0;
-    padding-right: 1rem;
-    top: 40%;
+  width: 50%;
+  position: absolute;
+  right: 0;
+  padding-right: 1rem;
+  top: 40%;
 }
 
 .database h1 {
-    text-transform: uppercase;
-    font-size: 4rem;
-    font-weight: bold;
-    padding: 0;
-    padding-left: 1rem;
-    margin: 0;
-    padding-bottom: .5rem;
+  text-transform: uppercase;
+  font-size: 4rem;
+  font-weight: bold;
+  padding: 0;
+  padding-left: 1rem;
+  margin: 0;
+  padding-bottom: .5rem;
 }
 
 .container {
-    width: 45%;
-    height: 50vh;
-    margin: 0;
-    overflow: scroll;
-    padding: 1rem;
-    position: absolute;
-    right: 0;
-    border: 1px solid grey;
-    margin-right: 3rem;
-    background-color: white;
+  width: 45%;
+  height: 50vh;
+  margin: 0;
+  overflow: scroll;
+  padding: 1rem;
+  position: absolute;
+  right: 0;
+  border: 1px solid grey;
+  margin-right: 3rem;
+  background-color: white;
 }
 
 .homepage svg {
-    padding-right: 1rem;
+  padding-right: 1rem;
 }
 
 .title {
-    font-size: 6rem;
-    font-weight: bold;
-    color: black;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-top: 0;
-    line-height: 4rem;
-    margin-bottom: 2rem;
+  font-size: 6rem;
+  font-weight: bold;
+  color: black;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-top: 0;
+  line-height: 4rem;
+  margin-bottom: 2rem;
 }
 
 #title {
-    font-size: 1.28rem;font-weight: 500;
+  font-size: 1.28rem;
+  font-weight: 500;
 }
 
 #author {
-    font-size: .8rem;
+  font-size: .8rem;
 }
 
 #description {
-    font-size: 1rem;
+  font-size: 1rem;
 }
 
 /* --------------------------------
@@ -191,15 +191,15 @@ form css reset
 --------------------------------- */
 
 input {
-    -webkit-appearance: none;
-    background-color: white;
-    cursor: arrow;
-    padding: 0;
-    border: none;
-    font-family: 'Oswald', sans-serif!important;
-    width: 100%;
-    overflow-x: hidden;
-    text-overflow: ellipsis;
+  -webkit-appearance: none;
+  background-color: white;
+  cursor: arrow;
+  padding: 0;
+  border: none;
+  font-family: 'Oswald', sans-serif !important;
+  width: 100%;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
 }
 
 /* --------------------------------
@@ -208,26 +208,26 @@ https://codepen.io/bisaillonyannick/pen/pvZeGg
 --------------------------------- */
 
 .homepage .arrow {
-    position: absolute;
-    bottom: 50%;
-    right: 55%;
+  position: absolute;
+  bottom: 50%;
+  right: 55%;
 }
 
 .database .arrow {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    padding-bottom: 1.5rem;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  padding-bottom: 1.5rem;
 }
 
 .arrow {
-    text-align: center;
-    color: black;
-    font-weight: lighter;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    font-size: .8rem;
+  text-align: center;
+  color: black;
+  font-weight: lighter;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: .8rem;
 }
 
 .bounce {
@@ -236,39 +236,32 @@ https://codepen.io/bisaillonyannick/pen/pvZeGg
 }
 
 @-webkit-keyframes bounce {
-  0%,
-  20%,
-  50%,
-  80%,
-  100% {
+  0%, 20%, 50%, 80%, 100% {
     -webkit-transform: translateY(0);
-            transform: translateY(0);
+    transform: translateY(0);
   }
   40% {
     -webkit-transform: translateY(-30px);
-            transform: translateY(-30px);
+    transform: translateY(-30px);
   }
   60% {
     -webkit-transform: translateY(-15px);
-            transform: translateY(-15px);
+    transform: translateY(-15px);
   }
 }
+
 @keyframes bounce {
-  0%,
-  20%,
-  50%,
-  80%,
-  100% {
+  0%, 20%, 50%, 80%, 100% {
     -webkit-transform: translateY(0);
-            transform: translateY(0);
+    transform: translateY(0);
   }
   40% {
     -webkit-transform: translateY(-30px);
-            transform: translateY(-30px);
+    transform: translateY(-30px);
   }
   60% {
     -webkit-transform: translateY(-15px);
-            transform: translateY(-15px);
+    transform: translateY(-15px);
   }
 }
 
@@ -277,34 +270,28 @@ media queries
 --------------------------------- */
 
 @media only screen and (max-width: 1000px) {
-    .homepage .arrow {
-        right: 65%;
-    }
+  .homepage .arrow {
+    right: 65%;
+  }
 }
 
 @media only screen and (max-width: 700px) {
-    .arrow {
-        display: none;
-    }
-
-    .title {
-        font-size: 4rem;
-    }
-
-    .form {
-        margin-top: 1rem;
-    }
-
-    .database h1  {
-        font-size: 3rem;
-    }
-
-    span {
-        padding: 1rem;
-    }
-
-    input.submit {
-        margin-left: 5rem;
-    }
-
+  .arrow {
+    display: none;
+  }
+  .title {
+    font-size: 4rem;
+  }
+  .form {
+    margin-top: 1rem;
+  }
+  .database h1 {
+    font-size: 3rem;
+  }
+  span {
+    padding: 1rem;
+  }
+  input.submit {
+    margin-left: 5rem;
+  }
 }

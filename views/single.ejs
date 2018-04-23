@@ -5,7 +5,8 @@
         <header>
             <nav>
                 <ul>
-                    <li><h1 class="title">READ ME</h1></li>
+                    <li>
+                        <h1 class="title">READ ME</h1></li>
                     <li><a href="/">Home</a></li>
                 </ul>
             </nav>
@@ -20,10 +21,10 @@
                 <a href="<%= article.url %>"><i class="fas fa-desktop"></i></a>
                 <a href="/database/single/<%= article.id %>/edit"><i  class="fas fa-pencil-alt"></i></a>
                 <i class="fas fa-share" onClick="alert('Copy and paste this URL: <%= article.url %>')"></i>
-                <input type="submit" value="delete" class="inline"/>
+                <input type="submit" value="delete" class="inline" />
             </form>
         </div>
     </body>
 
 
-<% include ./partials/end.ejs %>
+    <% include ./partials/end.ejs %>

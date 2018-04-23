@@ -22,7 +22,9 @@ app.use(session({
   saveUninitialized: false,
 }));
 
-app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.urlencoded({
+  extended: false
+}));
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride('_method'));
@@ -30,5 +32,5 @@ app.use(methodOverride('_method'));
 app.use('/', router);
 
 app.listen(PORT, () => {
-    console.log(`app is listening on port: ${PORT}`);
+  console.log(`app is listening on port: ${PORT}`);
 })
