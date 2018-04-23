@@ -50,15 +50,15 @@ module.exports= {
     },
 
     handleSubmitPartTwo(user_id, article_id) {
+        console.log('are you sure krista?')
         return db.one(`
             INSERT INTO reference (user_id, article_id)
             VALUES (
-                $/user_id/,
-                $/article_id/
+                ${user_id},
+                ${article_id}
             )
             RETURNING *
-            WHERE user_id = user_id
-        , ${user_id}, ${article_id}`);
+        `);
     },
 
 // { username: 'a', password_digest: 'a' }
