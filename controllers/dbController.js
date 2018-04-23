@@ -126,15 +126,10 @@ module.exports = {
         username,
         password_digest
       } = req.body;
-      console.log('mybod', req.body)
       const user = await db.findOneUser(username);
-      console.log(password_digest, user.password_digest)
       const valid = await bcrypt.compare(password_digest, user.password_digest);
-      console.log(valid)
       if (!valid) {
-        throw {
-          message: 'wrong password'
-        }
+        throw new Error('wrong password')
       }
       req.session.user = user;
       req.session.userID = user.id

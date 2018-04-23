@@ -22,7 +22,7 @@ router.route('/login')
   .get(views.showLoginForm)
   .post(controller.login, views.handleCreateUser)
 
-router.get('/logout', controller.logout, views.handleLogout, );
+router.get('/logout', controller.logout, views.handleLogout);
 
 router.route('/register')
   .get(views.showRegisterForm)
@@ -31,5 +31,11 @@ router.route('/register')
 
 router.route('/')
   .get(controller.data, views.showArticle)
+
+  /* Error handler */
+router.use((err, req, res, next) => {
+  console.error(err);
+  res.redirect('/login')
+});
 
 module.exports = router;

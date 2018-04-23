@@ -31,6 +31,12 @@ app.use(methodOverride('_method'));
 
 app.use('/', router);
 
+// GLOBAL ERROR HANDLER
+app.use((err, req, res, next) => {
+  console.error(err);
+  res.status(400).send('Something broke!');
+});
+
 app.listen(PORT, () => {
   console.log(`app is listening on port: ${PORT}`);
 })
