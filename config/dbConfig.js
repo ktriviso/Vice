@@ -4,6 +4,6 @@ const config = {
   port: 5432,
   database: 'vice_db'
 }
-const db = pg(config);
+const db = pg(process.env.DATABASE_URL || config);
 
 module.exports = db;
