@@ -49,17 +49,6 @@ module.exports = {
       });
   },
 
-  // showUser(req, res, next) {
-  //     db.findOneUser(req,params.id)
-  //         .then(data => {
-  //             res.locals.user = user;
-  //             next();
-  //         })
-  //         .catch(err => {
-  //             next(err);
-  //         });
-  // },
-
   update(req, res, next) {
     // you need to have this since the user doesnt have access
     req.body.id = req.params.id
@@ -86,8 +75,8 @@ module.exports = {
   },
 
   createReference(req, res, next) {
-    console.log('im inside the create reference', req.session.userID)
-    console.log('im the article id: ', res.locals.article.id)
+    // console.log('im inside the create reference', req.session.userID)
+    // console.log('im the article id: ', res.locals.article.id)
     debugger;
     db.handleSubmitPartTwo(req.session.userID, res.locals.article.id)
       .then(() => {
@@ -126,11 +115,8 @@ module.exports = {
         username,
         password_digest
       } = req.body;
-      console.log('mybod', req.body)
       const user = await db.findOneUser(username);
-      console.log(password_digest, user.password_digest)
       const valid = await bcrypt.compare(password_digest, user.password_digest);
-      console.log(valid)
       if (!valid) {
         throw {
           message: 'wrong password'
