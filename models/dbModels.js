@@ -11,6 +11,15 @@ module.exports = {
         `);
   },
 
+  correctedShowAll(id){
+      return db.many(`
+          SELECT *
+          FROM reference
+          JOIN articles ON article_id=id
+          WHERE user_id = $1
+        `, id);
+  },
+
   findOne(id) {
     return db.one(`
             SELECT *

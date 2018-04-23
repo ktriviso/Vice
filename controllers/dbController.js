@@ -28,7 +28,7 @@ module.exports = {
   // this is going to be for the datbase view
   // show all the articles that have been added
   index(req, res, next) {
-    db.findAll()
+    db.correctedShowAll(req.session.userID)
       .then(data => {
         res.locals.articles = data;
         next();
