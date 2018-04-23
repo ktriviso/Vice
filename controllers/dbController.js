@@ -112,6 +112,8 @@ module.exports = {
     req.body.password_digest = await bcrypt.hash(req.body.password, 5);
     db.saveUser(req.body)
       .then(user => {
+        req.session.user = user;
+        req.session.userID = user.id
         res.locals.user = user;
         next();
       })
