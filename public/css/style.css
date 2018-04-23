@@ -111,6 +111,11 @@ input.submit {
     margin-left: 9rem;
 }
 
+input.submit:hover {
+    background-color: black;
+}
+
+
 .article-container {
     width: 50%;
     height: 65vh;
@@ -275,4 +280,25 @@ media queries
     .arrow {
         display: none;
     }
+
+    .title {
+        font-size: 4rem;
+    }
+
+    .form {
+        margin-top: 1rem;
+    }
+
+    .database h1  {
+        font-size: 3rem;
+    }
+
+    span {
+        padding: 1rem;
+    }
+
+    input.submit {
+        margin-left: 5rem;
+    }
+
 }

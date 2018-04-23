@@ -57,12 +57,12 @@ The functionality is divided into two separate lists: MPV and PostMVP.
 | Design         | MPV           | 1hrs           | 1hrs            |
 | Mobile Design  | MPV           | 1hrs           | 0hrs            |
 | API            | MPV           | 1hrs           | 6hrs            |
-| Database       | MPV           | 3hrs           | 0hrs            |
-| Routes         | MPV           | 2hrs           | 0hrs            |
-| Controller     | MPV           | 2hrs           | 0hrs            |
-| Form           | MPV           | 1hrs           | 0hrs            |
-| Sign-in Flow   | MPV           | 5min           | 0hrs            |
-| ESJ Views      | PostMVP       | 2hrs           | 0hrs            |
+| Database       | MPV           | 3hrs           | 10hrs           |
+| Routes         | MPV           | 2hrs           | 6hrs            |
+| Controller     | MPV           | 2hrs           | 4hrs            |
+| Form           | MPV           | 1hrs           | 2hrs            |
+| Sign-in Flow   | MPV           | 5min           | 12hrs           |
+| ESJ Views      | PostMVP       | 2hrs           | 2hrs            |
 
 
 ## Wireframes
@@ -149,9 +149,6 @@ data(req, res, next) {
 ## Discoveries
 
 -   Document cannot be referenced server side. The best solution to get API data to render server-side is to pass it through the controller and views, down into the ejs view of your choosing.
-
-## Change Log
-
 
 ## Issues and Resolutions
 

@@ -15,6 +15,7 @@ router.route('/database/single/:id')
 router.route('/database')
     .get(controller.index, views.showAll)
     .post(controller.create, controller.createReference, views.handleCreate)
+    // .post(controller.create, views.handleCreate)
 
 router.get('/new', views.showAddForm)
 
@@ -27,6 +28,7 @@ router.get('/logout', controller.logout, views.handleLogout,);
 router.route('/register')
     .get(views.showRegisterForm)
     .post(controller.newUser, views.handleCreateUser)
+
 
 router.route('/')
     .get(controller.data, views.showArticle)

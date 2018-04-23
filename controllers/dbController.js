@@ -86,8 +86,16 @@ module.exports = {
     },
 
     createReference(req, res, next) {
-        db.handleSubmitPartTwo(req.params.id, res.locals.article)
-        next();
+        console.log('im inside the create reference', req.session.userID)
+        console.log('im the article id: ', res.locals.article.id)
+        debugger;
+        db.handleSubmitPartTwo(req.session.userID, res.locals.article.id)
+        .then(() => {
+            next();
+        })
+        .catch(err => {
+            next(err);
+        });
     },
 
     destroy(req, res, next) {
@@ -124,6 +132,7 @@ module.exports = {
                 throw { message: 'wrong password' }
             }
             req.session.user = user;
+            req.session.userID = user.id
             next();
         } catch (err) {
             next(err);
@@ -135,8 +144,8 @@ module.exports = {
     },
 
     loginRequired: [
-        (req, res, next) => next(!req.session.user || null),
-        (err, req, res, next) => res.sendStatus(401),
+      (req, res, next) => next(!req.session.user || null),
+      (err, req, res, next) => res.sendStatus(401),
     ],
 
 };
