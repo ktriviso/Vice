@@ -49,17 +49,6 @@ module.exports = {
       });
   },
 
-  // showUser(req, res, next) {
-  //     db.findOneUser(req,params.id)
-  //         .then(data => {
-  //             res.locals.user = user;
-  //             next();
-  //         })
-  //         .catch(err => {
-  //             next(err);
-  //         });
-  // },
-
   update(req, res, next) {
     // you need to have this since the user doesnt have access
     req.body.id = req.params.id
@@ -112,6 +101,7 @@ module.exports = {
     req.body.password_digest = await bcrypt.hash(req.body.password, 5);
     db.saveUser(req.body)
       .then(user => {
+          // this is not ideal for production, you would want to store this in a database not in memory
         req.session.user = user;
         req.session.userID = user.id
         res.locals.user = user;

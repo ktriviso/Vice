@@ -1,28 +1,12 @@
 # Vice Feed
 ## Vice News API CRUD App
 
-# Project Overview
-
-## Project Schedule
-
-The schedule below reflects the required deadlines and was used to keep track of developer progress to align with expectations. Approval for deliverables was required by the end of the corresponding day excluding `Saturday` and `Sunday`.
-
-
-| Day         | Deliverable                    |
-| ----------- | ------------------------------ |
-| Day 1: Wed  | Wireframes and Game Approval   |
-| Day 2: Thur | CSS and Server running         |
-| Day 3: Fri  | API Data populated to Page     |
-| Day 4: Sat  | Routes and Models              |
-| Day 5: Sun  | Forms / Sign in                |
-| Day 6: Mon  | Bugs / Video / Prep            |
-| Day 7: Tues | Project Presentations          |
-
 ## Project Description
 
 Vice Feed uses the Vice API to create a scrollable column of news articles. The app will have full CRUD App functionality; save article to database, create custom article, view single article, edit article, delete from database, share url for article, and sign in flow with encrypted authentication.
 
-![Final Version](http://)
+![Final Version](https://vice-feed.herokuapp.com/login)
+![Video Presentation](https://drive.google.com/open?id=1OYmvDtUl6_JSRQ2vISMDMIlW99kdbXnt)
 
 ## Priority Matrix
 
@@ -39,6 +23,7 @@ Prioritized features include the following:
 -   Edit articles that have been saved
 -   Delete articles from database
 -   Page to display full list of saved articles
+-   Share button
 
 ## Tech Requirements
 
@@ -50,29 +35,17 @@ Prioritized features include the following:
 -   CSS & Design: Your app should be pleasing to look at. Your design should take usability into account.
 
 
-### MVP/PostMVP
-
-The functionality is divided into two separate lists: MPV and PostMVP.
-
-| Component      | MPV / PostMVP | Estimated Time | Actual Invested |
-| -------------- | :-----------: |  :-----------: | :-------------: |
-| Design         | MPV           | 1hrs           | 2hrs            |
-| API            | MPV           | 1hrs           | 2hrs            |
-| Database       | MPV           | 3hrs           | 12hrs           |
-| Routes         | MPV           | 2hrs           | 6hrs            |
-| Controller     | MPV           | 2hrs           | 4hrs            |
-| Form           | MPV           | 1hrs           | 2hrs            |
-| Sign-in Flow   | MPV           | 5min           | 8hrs            |
-| ESJ Views      | PostMVP       | 2hrs           | 2hrs            |
-| Custom Article | PostMVP       | 1hrs           | 1hrs            |
-| -------------- | :-----------: |  :-----------: | :-------------: |
-| Total          |               | 19hrs          | 39hrs           |
-
-
 ## Wireframes
 
 ![Whiteboard Wireframe](./whiteboarding.png)
 ![Final Wireframe](./witeframe.png)
+
+## Instructions
+
+-   Download Github repository
+-   NPM run from root directory
+-   Open localhost:3000
+
 
 ## App Components
 
@@ -84,6 +57,7 @@ When the app is loaded the user is directed to the sign-in page:
 -   User is authenticated
 -   Information is authorized
 -   Home page is loaded on authorized approval
+-   If user is not yet registered, redirect to register form
 
 ### Home page
 
@@ -103,20 +77,31 @@ When the user has been authorized to enter the site, the home page will display:
 
 The database can be accessed from the button on the home page. The database will display each article preview with a link to view the full article in a separate page.
 
+### Single View
 
-## Functional Components
-
-The following code is encapsulated for the purpose of reusability.
+Displays article with GUI buttons for editing, deleting, viewing and sharing.
 
 
-| Function     | Description                                                          |
-| ------------ | -------------------------------------------------------------------- |
-| Article View | Article view is rendered by clicking button on multiple pages in app |
-| Forms        | Forms are designed using CSS classes for easy reusability            |
+## Technologies
+
+| Name            | Description                                                         |
+| --------------- | ------------------------------------------------------------------- |
+| Express         | Framework used to build web applications and API's                  |
+| Path            | Provides utilities for working with file d directory paths          |
+| Morgan          | HTTP request logger for middlewear                                  |
+| Method-override | Allows you to alter the default behavior such as put and delete     |
+| Body-parser     | Parses incoming request bodies allowing it to be access by req.body |
+| Express-session | Allows the application to store a state, used for user login        |
+| Bcrypt          | Library that allows hashing and comparing of passwords              |
+| EJS             | Templating language to generate HTML markup in Javascript           |
+| PG-promise      | PostgreSQL library with built-in promises                           |
+| Dotenv          | Storing and configuring variable in the env separate from the code  |
+| Nodemon         | Monitors changes in source code and restarts the server             |
+| NPM             | Package manager for Javascript                                      |
+| Vice API        | Headlines, articles, images, and other article metadata from Vice   |
 
 
 ## Additional Libraries
-
 
 | Library        | Description                                              |
 | -------------- | -------------------------------------------------------- |
@@ -150,10 +135,14 @@ data(req, res, next) {
 }
 ```
 
-
 ## Discoveries
 
 -   Document cannot be referenced server side. The best solution to get API data to render server-side is to pass it through the controller and views, down into the ejs view of your choosing.
+
+## Future Fixes / Features
+
+-   Custom modals for responding to user actions such as logging in, saving/ deleting articles and clicking on share link
+-   Make a public list of articles that the does not require sign-in flow
 
 ## Issues and Resolutions
 

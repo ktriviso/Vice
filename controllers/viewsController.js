@@ -39,7 +39,6 @@ module.exports = {
     res.redirect(`/database/single/${id}`)
   },
 
-  // if you change, edit or delete, just go back to the database
   handleCreate(req, res) {
     res.redirect('/')
   },
@@ -69,10 +68,6 @@ module.exports = {
   },
 
   handleCreateUser(req, res) {
-    // res.render('home', {
-    //     data: res.locals.articles
-    // });
-    // why can i not use the code above?
     res.redirect('/');
   },
 
